@@ -6,21 +6,23 @@ import {connect} from 'react-redux';
 import * as detailsActions from '../../actions/details';
 import getRealm from '~/services/realm';
 
+import ViewerOpening from '~/components/OpeningViewer';
+
 import {
   Container,
+  ContainerScroll,
   Title,
-  Description,
+  Poster,
   Info,
   InfoText,
   InfoView,
-  DescriptionView,
-  DescriptionScrollView,
-  InfoButton,
-  Poster,
+  ViewerButton,
+  ViewerButtonText,
 } from './styles';
 
 function FilmsDetails({details, navigation}) {
   const [info, setInfo] = useState({release_date: ''});
+  const [viewerState, setViewerState] = useState(false);
 
   useEffect(() => {
     async function handleSearchFilms() {
@@ -44,37 +46,45 @@ function FilmsDetails({details, navigation}) {
 
   return (
     <Container>
-      <Title>{info.title}</Title>
-      <Poster number={details.data} />
+      <ContainerScroll>
+        <Title>{info.title}</Title>
+        <Poster number={details.data} />
 
-      <Info>
+        <Info>
+          <InfoView>
+            <Icon name="user" size={22} />
+            <InfoText>Director: {info.director}</InfoText>
+          </InfoView>
+
+          <InfoView>
+            <Icon name="user" size={22} />
+            <InfoText>Producer(s): {info.producer}</InfoText>
+          </InfoView>
+
+          <InfoView>
+            <Icon name="calendar" size={22} />
+            <InfoText>
+              Release Date: {date[2]}/{date[1]}/{date[0]}
+            </InfoText>
+          </InfoView>
+        </Info>
+
         <InfoView>
-          <Icon name="user" size={22} />
-          <InfoText>Director: {info.director}</InfoText>
+          <Icon name="file-text-o" size={22} />
+          <InfoText>Opening Crawl: </InfoText>
         </InfoView>
 
-        <InfoView>
-          <Icon name="user" size={22} />
-          <InfoText>Producer(s): {info.producer}</InfoText>
-        </InfoView>
+        <ViewerButton onPress={() => setViewerState(true)}>
+          <Icon name="film" size={22} color="#fff" />
+          <ViewerButtonText>Visualizar</ViewerButtonText>
+        </ViewerButton>
 
-        <InfoView>
-          <Icon name="calendar" size={22} />
-          <InfoText>
-            Release Date: {date[2]}/{date[1]}/{date[0]}
-          </InfoText>
-        </InfoView>
-      </Info>
-
-      <InfoView>
-        <Icon name="file-text-o" size={22} />
-        <InfoText>Opening Crawl: </InfoText>
-      </InfoView>
-      <DescriptionView>
-        <DescriptionScrollView>
-          <Description>{info.opening_crawl}</Description>
-        </DescriptionScrollView>
-      </DescriptionView>
+        <ViewerOpening
+          visibility={viewerState}
+          close={() => setViewerState(false)}
+          text={info.opening_crawl}
+        />
+      </ContainerScroll>
     </Container>
   );
 }

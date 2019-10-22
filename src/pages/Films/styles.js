@@ -1,7 +1,13 @@
 import styled from 'styled-components/native';
 import Images from '../../images';
 
-export const Container = styled.ScrollView.attrs({
+export const Container = styled.View`
+  flex: 1;
+  background-color: #000000;
+  padding-top: 30px;
+`;
+
+export const ContainerScroll = styled.ScrollView.attrs({
   showsVerticalScrollIndicator: false,
 })`
   flex: 1;
@@ -14,35 +20,6 @@ export const Title = styled.Text`
   font-size: 22px;
   font-weight: bold;
   text-align: center;
-`;
-
-export const Description = styled.Text`
-  margin: 500px 0;
-  border-radius: 4px;
-  text-align: center;
-  font-family: notoserif;
-  font-size: 22px;
-  font-weight: bold;
-  color: #f0d737;
-`;
-
-export const DescriptionScrollView = styled.ScrollView.attrs({
-  showsVerticalScrollIndicator: false,
-})`
-  flex: 2;
-  margin: -200px 0;
-  transform: rotateX(60deg);
-`;
-
-export const DescriptionView = styled.ImageBackground.attrs({
-  source: {
-    uri:
-      'https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_960_720.png',
-  },
-})`
-  height: 300px;
-  border-radius: 4px;
-  padding: 10px 0;
 `;
 
 export const Info = styled.View`
@@ -67,6 +44,22 @@ export const InfoText = styled.Text.attrs({
 export const InfoButton = styled.TouchableOpacity`
   flex-direction: row;
   margin: 5px 5px;
+`;
+
+export const ViewerButton = styled.TouchableOpacity`
+  flex-direction: row;
+  border-radius: 5px;
+  padding: 10px 8px;
+  margin: 12px 70px;
+  background-color: #000;
+  justify-content: center;
+`;
+
+export const ViewerButtonText = styled.Text`
+  padding: 0 5px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
 `;
 
 export const Poster = styled.Image.attrs(props => ({

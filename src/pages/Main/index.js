@@ -51,7 +51,9 @@ function Main({saveDetails, navigation}) {
       realm.create('Film', data, 'modified');
     });
 
-    setList(data ? [...list, data] : []);
+    const dataSaved = realm.objects('Film').sorted('episode_id', false);
+
+    setList(dataSaved ? dataSaved : []);
   }
 
   async function handleDeleteFilms(film) {

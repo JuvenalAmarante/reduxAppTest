@@ -8,8 +8,6 @@ import {
   Info,
   InfoText,
   InfoView,
-  DescriptionView,
-  DescriptionScrollView,
   InfoButton,
 } from './styles';
 

@@ -15,36 +15,6 @@ export const Title = styled.Text`
   font-weight: bold;
 `;
 
-export const Description = styled.Text`
-  border-radius: 4px;
-  text-align: center;
-  font-family: notoserif;
-  font-size: 15px;
-  font-weight: bold;
-  color: #f0d737;
-`;
-
-export const DescriptionScrollView = styled.ScrollView.attrs({
-  showsVerticalScrollIndicator: false,
-})`
-  transform: rotateX(60deg);
-  height: 200px;
-  margin: -45px 0;
-`;
-
-export const DescriptionView = styled.ImageBackground.attrs({
-  source: {
-    uri:
-      'https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_960_720.png',
-  },
-})`
-  border-radius: 4px;
-  text-align: center;
-  font-family: notoserif;
-  color: #f0d737;
-  margin: 10px 0;
-`;
-
 export const Info = styled.View`
   flex-wrap: wrap;
   flex-direction: row;
