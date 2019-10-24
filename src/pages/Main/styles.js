@@ -20,8 +20,8 @@ export const Logo = styled.Image.attrs({
   align-self: center;
   padding: 0 10px;
   resize-mode: center;
-  height: 150px;
-  width: 230px;
+  height: 19%;
+  width: 55%;
 `;
 
 export const List = styled.FlatList.attrs({

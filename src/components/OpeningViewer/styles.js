@@ -3,25 +3,22 @@ import LinearGradient from 'react-native-linear-gradient';
 
 export const Container = styled.Modal.attrs({
   animationType: 'slide',
-})`
-  flex: 1;
-  margin-top: 38px;
-`;
-
-export const Background = styled.ImageBackground.attrs({
-  source: {
-    uri:
-      'https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_960_720.png',
-  },
 })``;
 
 export const Description = styled.Text`
-  margin: 500px 0;
   text-align: center;
   font-family: notoserif;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
   color: #f0d737;
+`;
+
+export const DescriptionListItem = styled.View`
+  margin: -12px;
+`;
+
+export const DescriptionSpace = styled.View`
+  margin: 390px 0;
 `;
 
 export const DescriptionScrollView = styled.ScrollView.attrs({
@@ -29,16 +26,16 @@ export const DescriptionScrollView = styled.ScrollView.attrs({
 })`
   flex: 1;
   transform: rotateX(60deg);
+  margin-top: -100%;
 `;
 
 export const FadeDescriptionView = styled(LinearGradient).attrs({
-  colors: ['#000', 'rgba(0, 0, 0, 0)'],
+  colors: ['#000', 'rgba(0, 0, 0, 0.3)'],
   start: {x: 0, y: 0},
   end: {x: 0, y: 1},
 })`
-  margin: -200px 0;
-  flex: 1;
-  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  padding: 20px 0;
 `;
 
 export const DescriptionView = styled.ImageBackground.attrs({
@@ -47,7 +44,5 @@ export const DescriptionView = styled.ImageBackground.attrs({
       'https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_960_720.png',
   },
 })`
-  flex: 1;
-  border-radius: 4px;
-  padding: 10px 0;
+  height: 150%;
 `;

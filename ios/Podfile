@@ -38,6 +38,8 @@ target 'ReduxTeste' do
 
   pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
 
+  pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
+
   target 'ReduxTesteTests' do
     inherit! :search_paths
     # Pods for testing

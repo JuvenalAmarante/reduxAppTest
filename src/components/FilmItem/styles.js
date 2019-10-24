@@ -44,5 +44,5 @@ export const Poster = styled.Image.attrs(props => ({
 }))`
   resize-mode: center;
   align-self: center;
-  height: 310px;
+  height: 55%;
 `;

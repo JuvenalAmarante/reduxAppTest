@@ -21,7 +21,7 @@ import {
 } from './styles';
 
 function FilmsDetails({details, navigation}) {
-  const [info, setInfo] = useState({release_date: ''});
+  const [info, setInfo] = useState({opening_crawl: '', release_date: ''});
   const [viewerState, setViewerState] = useState(false);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function FilmsDetails({details, navigation}) {
     }
 
     handleSearchFilms();
-  }, [details, navigation]);
+  }, [details, info.opening_crawl, navigation]);
 
   const date = info.release_date.split('-');
 
